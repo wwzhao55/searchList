@@ -1,24 +1,18 @@
 
 # 仿百度搜索框下拉效果
 
- ![Untitled Image](http://images.zyy1217.com/4pQTj)
- 
- 这是2017腾讯前端实习生一面的笔试题，当时虽然磕磕巴巴的做了出来，可是踩了很多坑。
- 比如直接使用js拼接html字符串，会导致xss漏洞。比如使用了with语法。比如没有实现模块化和复用思想，没有考虑兼容性等等。所以面试结束后，又心平气和的静下心来，重新写了个比较完备的demo，具体样式效果如下：
-## 最终实现效果
-![Untitled Image](http://images.zyy1217.com/hpEa8)
-## [在线演示](http://www.zyy1217.com/project/searchlist/)
+## [在线演示](http://www.wwzhao.com/project/searchlist/)
  
 今天就来简单讲解下如何做这样一个类似百度搜索框的下拉效果。
 
 # 1、页面部分
 
 首先你得要有个输入框，这里我用了 <input type='search' /> 控件，其次当用户在输入框中输入内容后，下拉效果随即出现。
-至于下拉框我本来使用的是select, 经过腾讯面试官litten的指点，改成了ul和li，这样就可以自定义样式，开放性更好。li元素是js动态生成的，html 和 css 部分相对来说还是比较简单的，直接看代码。
+至于下拉框我使用的是ul和li，这样就可以自定义样式，开放性更好。li元素是js动态生成的，html 和 css 部分相对来说还是比较简单的，直接看代码。
 
 ```html
 <div>
-<input id="txtInput" type="search"/>
+<input id="searchInput" type="search"/>
 <ul id="list">
 </ul>
 </div>
